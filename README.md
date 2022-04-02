@@ -54,23 +54,23 @@ Para testar a aplicação podemos realizar chamadas CURL para os end-points dos 
 
 POST /api/clientes - Criar um cliente
 
-    curl -X POST http://fiap-7aso-fiap-7aso-grupo-8.apps.na46.prod.nextcle.com/api/clientes -H 'Content-Type: application/json' -d '{"nome":"João Marcelo","idade":22, "uf":"RJ"}'
+    curl -X POST http://clientes.apps.na46.prod.nextcle.com/api/clientes -H 'Content-Type: application/json' -d '{"nome":"João Marcelo","idade":22, "uf":"RJ"}'
 
 GET /api/clientes - Recuperar todos os clientes
 
-    curl http://fiap-7aso-fiap-7aso-grupo-8.apps.na46.prod.nextcle.com/api/clientes
+    curl http://clientes.apps.na46.prod.nextcle.com/api/clientes
 
 GET /api/clientes/:id - Recuperar um cliente específico
 
-    curl http://fiap-7aso-fiap-7aso-grupo-8.apps.na46.prod.nextcle.com/api/clientes/1
+    curl http://clientes.apps.na46.prod.nextcle.com/api/clientes/1
 
 
 PUT /api/clientes/:id - Alterar um cliente
 
-    curl -X PUT http://fiap-7aso-fiap-7aso-grupo-8.apps.na46.prod.nextcle.com/api/clientes -H 'Content-Type: application/json' -d '{"id": 1, "nome":"João Marcelo","idade":22, "uf":"RJ"}'
+    curl -X PUT http://clientes.apps.na46.prod.nextcle.com/api/clientes -H 'Content-Type: application/json' -d '{"id": 1, "nome":"João Marcelo","idade":22, "uf":"RJ"}'
 
 DELETE /api/clientes/:id - Excluir um cliente
 
-    curl -X DELETE http://fiap-7aso-fiap-7aso-grupo-8.apps.na46.prod.nextcle.com/api/clientes/1
+    curl -X DELETE http://clientes.apps.na46.prod.nextcle.com/api/clientes/1
 
 

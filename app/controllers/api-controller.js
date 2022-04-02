@@ -45,19 +45,19 @@ exports.mostrarDoc = function (req, res) {
     <h4 id="testes">Testes</h4>
     <p>Para testar a aplicação podemos realizar chamadas CURL para os end-points dos serviços, conforme exemplos abaixos: </p>
     <p>POST /api/clientes - Criar um cliente</p>
-    <pre><code>curl -X POST http://fiap-7aso-fiap-7aso-grupo-8.apps.na46.prod.nextcle.com/api/clientes -H 'Content-Type: application/json' -d '{"nome":"João Marcelo","idade":22, "uf":"RJ"}'
+    <pre><code>curl -X POST http://clientes.apps.na46.prod.nextcle.com/api/clientes -H 'Content-Type: application/json' -d '{"nome":"João Marcelo","idade":22, "uf":"RJ"}'
     </code></pre>
     <p>GET /api/clientes - Recuperar todos os clientes</p>
-    <pre><code>curl http://fiap-7aso-fiap-7aso-grupo-8.apps.na46.prod.nextcle.com/api/clientes
+    <pre><code>curl http://clientes.apps.na46.prod.nextcle.com/api/clientes
     </code></pre>
     <p>GET /api/clientes/:id - Recuperar um cliente específico</p>
-    <pre><code>curl http://fiap-7aso-fiap-7aso-grupo-8.apps.na46.prod.nextcle.com/api/clientes/1
+    <pre><code>curl http://clientes.apps.na46.prod.nextcle.com/api/clientes/1
     </code></pre>
     <p>PUT /api/clientes/:id - Alterar um cliente</p>
-    <pre><code>curl -X PUT http://fiap-7aso-fiap-7aso-grupo-8.apps.na46.prod.nextcle.com/api/clientes -H 'Content-Type: application/json' -d '{"id": 1, "nome":"João Marcelo","idade":22, "uf":"RJ"}'
+    <pre><code>curl -X PUT http://clientes.apps.na46.prod.nextcle.com/api/clientes -H 'Content-Type: application/json' -d '{"id": 1, "nome":"João Marcelo","idade":22, "uf":"RJ"}'
     </code></pre>
     <p>DELETE /api/clientes/:id - Excluir um cliente</p>
-    <pre><code>curl -X DELETE http://fiap-7aso-fiap-7aso-grupo-8.apps.na46.prod.nextcle.com/api/clientes/1
+    <pre><code>curl -X DELETE http://clientes.apps.na46.prod.nextcle.com/api/clientes/1
     </code></pre>
     </body>
     </html>`
