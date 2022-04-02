@@ -54,7 +54,7 @@ exports.mostrarDoc = function (req, res) {
     <pre><code>curl http://clientes.apps.na46.prod.nextcle.com/api/clientes/1
     </code></pre>
     <p>PUT /api/clientes/:id - Alterar um cliente</p>
-    <pre><code>curl -X PUT http://clientes.apps.na46.prod.nextcle.com/api/clientes -H 'Content-Type: application/json' -d '{"id": 1, "nome":"João Marcelo","idade":22, "uf":"RJ"}'
+    <pre><code>curl -X PUT http://clientes.apps.na46.prod.nextcle.com/api/clientes/1 -H 'Content-Type: application/json' -d '{"id": 1, "nome":"João Marcelo da Costa","idade":22, "uf":"RJ"}'
     </code></pre>
     <p>DELETE /api/clientes/:id - Excluir um cliente</p>
     <pre><code>curl -X DELETE http://clientes.apps.na46.prod.nextcle.com/api/clientes/1

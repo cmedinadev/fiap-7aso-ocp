@@ -67,7 +67,7 @@ GET /api/clientes/:id - Recuperar um cliente específico
 
 PUT /api/clientes/:id - Alterar um cliente
 
-    curl -X PUT http://clientes.apps.na46.prod.nextcle.com/api/clientes -H 'Content-Type: application/json' -d '{"id": 1, "nome":"João Marcelo","idade":22, "uf":"RJ"}'
+    curl -X PUT http://clientes.apps.na46.prod.nextcle.com/api/clientes/1 -H 'Content-Type: application/json' -d '{"id": 1, "nome":"João Marcelo da Costa","idade":22, "uf":"RJ"}'
 
 DELETE /api/clientes/:id - Excluir um cliente
 
