@@ -1,0 +1,17 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: fiap-7aso
+  namespace: fiap-7aso-grupo-8
+  labels:
+    app: fiap-aso7-app
+spec:
+  ports:
+    - protocol: TCP
+      port: 8081
+      targetPort: 8081
+  selector:
+    app: fiap-aso7-app
+  type: LoadBalancer
+  sessionAffinity: None
+  externalTrafficPolicy: Cluster

@@ -1,0 +1,14 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: fiap-7aso-grupo-8
+resources:
+  - build-config/app.buildconfig.yaml
+  - secret/app.secret.yaml
+  - secret/db.secret.yaml
+  - deployment/app.deployment.yaml
+  - deployment-config/db.deploymentconfig.yaml  
+  - service/app.service.yaml
+  - service/db.service.yaml
+  - route/app-ingress.route.yaml
+  - hpa/app.hpa.yaml
+  - pvc/db.pvc.yaml

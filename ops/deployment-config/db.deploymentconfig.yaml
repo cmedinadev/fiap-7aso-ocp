@@ -1,0 +1,67 @@
+kind: DeploymentConfig
+apiVersion: apps.openshift.io/v1
+metadata:
+  name: sample-database
+  namespace: fiap-7aso-grupo-8
+  labels:
+    app: sample-database
+spec:
+  triggers:
+    - type: ImageChange
+      imageChangeParams:
+        automatic: true
+        containerNames:
+          - postgresql
+        from:
+          kind: ImageStreamTag
+          namespace: openshift
+          name: 'postgresql:10'
+        lastTriggeredImage: postgres:10.19-alpine
+    - type: ConfigChange
+  replicas: 1
+  selector:
+    name: sample-database
+  template:
+    metadata:
+      labels:
+        name: sample-database
+    spec:
+      volumes:
+        - name: sample-database-data
+          persistentVolumeClaim:
+            claimName: sample-database
+      containers:
+        - resources:
+            limits:
+              memory: 512Mi
+          name: postgresql
+          env:
+            - name: POSTGRESQL_USER
+              valueFrom:
+                secretKeyRef:
+                  name: sample-database-secret
+                  key: database-user
+            - name: POSTGRESQL_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: sample-database-secret
+                  key: database-password
+            - name: POSTGRESQL_DATABASE
+              valueFrom:
+                secretKeyRef:
+                  name: sample-database-secret
+                  key: database-name
+          ports:
+            - containerPort: 5432
+              protocol: TCP
+          imagePullPolicy: IfNotPresent
+          volumeMounts:
+            - name: sample-database-data
+              mountPath: /var/lib/pgsql/data
+          terminationMessagePolicy: File
+          image: postgres:10.19-alpine
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
+      dnsPolicy: ClusterFirst
+      securityContext: {}
+      schedulerName: default-scheduler

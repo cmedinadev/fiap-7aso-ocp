@@ -1,0 +1,7 @@
+oc.exe
+
+node_modules/
+
+target/
+
+inator.sh
