@@ -1,5 +1,4 @@
 const db = require('../model/db');
-const showdown   = require('showdown');
 
 exports.recuperarClientes = async function (req, res) {
     const clientes = await db.selectClientes();
